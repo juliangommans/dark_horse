@@ -1,14 +1,14 @@
 require 'pp'
 require 'CSV'
-#require_relative 'dark_controller'
-#require_relative 'dark_model'
+
 #require_relative 'high_scores.csv'
 
 class DarkView
-  def initialize(question, answer)
-    @question = question
-    @answer = answer
-  end
+  #driver code ref for jay, ignore
+  # def initialize(question, answer)
+  #   @question = question
+  #   @answer = answer
+  # end
 
   def start
   puts "Welcome Player 1, please enter your name"
