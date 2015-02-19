@@ -41,6 +41,13 @@ class DarkController
 
   end
 
+
+  def player_names
+    @view.start_1
+      @model.player_1 = gets.chomp
+    @view.start_2
+      @model.player_2 = gets.chomp
+  end
 end
 
 DarkHorseGame.new
