@@ -43,23 +43,9 @@ class DarkView
   def high_scores(file)
   File.foreach(file) { |row|
     puts row}
-
-    puts CSV.read('high_scores.csv')
   end
 end
 
-x = DarkView.new("what's this?", "It's an answer")
 
-x.start
-x.question('who are you?')
-x.correct
-x.incorrect("this is a question")
-x.high_scores('high_scores.csv')
-#x.score([1,2,3,4,5])
-sleep 0.5
-#x.score([0,9,8,7,6])
-sleep 0.5
-#x.score([1,2,3,4,5])
-sleep 0.5
-#x.score([0,9,8,7,6])
-sleep 0.5
+
+

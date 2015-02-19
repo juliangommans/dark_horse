@@ -25,6 +25,23 @@ class DarkController
 
   def play
 
+    #deck.length.times do
+      #draw card
+      #player 1 question
+      #check answer and update results
+      #player 2 question
+      #check answer and update results
+      #update the score.
+    #end
+
+    current_card = @model.current_card
+    @view.question(current_card.question)
+    @view.incorrect(current_card.answer)
+
+
   end
 
 end
+
+DarkHorseGame.new
+
