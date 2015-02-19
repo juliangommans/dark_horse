@@ -12,14 +12,18 @@ end
 #######################################
 class DarkModel #getting the questions from dark_questions_samples.txt
 
+attr_accessor :player_1, :player_2
+
   def initialize
     file_parsing
+    @player_1 = ""
+    @player_2 = ""
   end
 
   def file_parsing
     @flashcards = []
     questions = File.readlines('dark_questions_samples.txt')
-    until questions empty?
+    until questions.empty?
       question_chunk = questions.slice!(0,3)
       @flashcards << FlashCard.new(question_chunk[0],question_chunk[1])
     end
