@@ -12,8 +12,12 @@ end
 #######################################
 class DarkModel #getting the questions from dark_questions_samples.txt
 
+attr_accessor :player_1, :player_2
+
   def initialize
     file_parsing
+    @player_1 = ""
+    @player_2 = ""
   end
 
   def file_parsing
