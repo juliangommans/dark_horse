@@ -4,11 +4,8 @@ require 'CSV'
 #require_relative 'high_scores.csv'
 
 class DarkView
-  #driver code ref for jay, ignore
-  # def initialize(question, answer)
-  #   @question = question
-  #   @answer = answer
-  # end
+  def initialize
+  end
 
   def start
   puts "Welcome Player 1, please enter your name"
@@ -27,6 +24,8 @@ class DarkView
 
   def question(question)
     puts "Your next question is: #{question}"
+    answer=gets.chomp
+    #can return the answer if needs be
   end
 
   def correct
@@ -43,23 +42,44 @@ class DarkView
   def high_scores(file)
   File.foreach(file) { |row|
     puts row}
-
-    puts CSV.read('high_scores.csv')
   end
 end
 
-x = DarkView.new("what's this?", "It's an answer")
-
-x.start
-x.question('who are you?')
-x.correct
-x.incorrect("this is a question")
-x.high_scores('high_scores.csv')
-#x.score([1,2,3,4,5])
+#-------HERE IS A NICE LITTLE START UP DEMO ----------#
+print "\e[H"
+puts "commencing screen test for curser, please wait"
+sleep 0.6
+print "\e[H\e[2J"
+print "\e[H"
+puts".."
+sleep 0.2
+print "\e[H"
+puts"...."
+sleep 0.2
+print "\e[H"
+puts"......"
+sleep 0.2
+print "\e[H"
+puts"........"
+sleep 0.2
+print "\e[H"
+puts"..........."
+sleep 0.2
+print "\e[H\e[2J"
+DarkView.new.score([1,2,3,4,5])
+sleep 0.6
+DarkView.new.score([0,9,8,7,6])
+sleep 0.6
+DarkView.new.score([10,20,30,40,50])
+sleep 0.6
+DarkView.new.score([100,90,80,70,60])
+sleep 0.6
+print "\e[H\e[2J"
+DarkView.new.start
+DarkView.new.question('Is this a question???')
 sleep 0.5
-#x.score([0,9,8,7,6])
+DarkView.new.correct
 sleep 0.5
-#x.score([1,2,3,4,5])
+DarkView.new.incorrect("this is a question")
 sleep 0.5
-#x.score([0,9,8,7,6])
-sleep 0.5
+DarkView.new.high_scores('high_scores.csv')
