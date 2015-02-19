@@ -10,10 +10,14 @@ class FlashCard
 
 end
 #######################################
-class FileParsing #getting the questions from dark_questions_samples.txt
+class DarkModel #getting the questions from dark_questions_samples.txt
 
-  def questions_from_txt_file
+  def file_parsing
 
+
+  end
+
+  def scoring_system
 
   end
 
