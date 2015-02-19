@@ -1,5 +1,3 @@
-require 'dark_controller.rb'
-require 'dark_view.rb'
 #######################################
 class FlashCard
 
