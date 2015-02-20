@@ -8,23 +8,35 @@ class DarkView
   end
 
   def start
-  puts "Welcome Player 1, please enter your name"
-  p1_name=gets.chomp
-  puts "Welcome Player 2, please enter your name"
-  p2_name=gets.chomp
-
-  #heres where we return this to the controller
-  #CallMethod.do(p1_name, p2_name)
+    2.times do |player|
+      puts "Welcome Player #{player+1}, please enter your name"
+    end
   end
 
-  def score(score_array)
-    print "\e[H"
-    puts score_array
+  def score(p1,p2,s1,s2)
+    track1=[" "," "," "," "," "]
+    track2=[" "," "," "," "," "]
+      if s1!=0
+        track1.insert(s1-1, 'X')
+      end
+
+      if s1!=0
+        track2.insert(s2-1,'X')
+      end
+      print "\e[H\e[2J"
+      print "\e[H"
+      print
+        track1.each {|x| print x, " | " }
+        puts p1
+      print
+        track2.each {|x| print x, " | " }
+        puts p2
+    # puts racetrack1
+    # puts racetrack2
   end
 
   def question(question)
     puts "Your next question is: #{question}"
-    answer=gets.chomp
     #can return the answer if needs be
   end
 
@@ -40,15 +52,17 @@ class DarkView
 
 
   def high_scores(file)
+    puts "Here's the high scores:"
   File.foreach(file) { |row|
     puts row}
   end
 end
 
 #-------HERE IS A NICE LITTLE START UP DEMO ----------#
+print "\e[H\e[2J"
 print "\e[H"
 puts "commencing screen test for curser, please wait"
-sleep 0.6
+sleep 1.2
 print "\e[H\e[2J"
 print "\e[H"
 puts".."
@@ -66,16 +80,17 @@ print "\e[H"
 puts"..........."
 sleep 0.2
 print "\e[H\e[2J"
-DarkView.new.score([1,2,3,4,5])
+DarkView.new.score('Bob','John',1,1)
 sleep 0.6
-DarkView.new.score([0,9,8,7,6])
+DarkView.new.score('Grace','Amanda',1,4)
 sleep 0.6
-DarkView.new.score([10,20,30,40,50])
+DarkView.new.score('Fredrick', 'Jimmy',6,4)
 sleep 0.6
-DarkView.new.score([100,90,80,70,60])
+DarkView.new.score('Hacker', 'Nice Guy',6,6)
 sleep 0.6
 print "\e[H\e[2J"
 DarkView.new.start
+sleep 2
 DarkView.new.question('Is this a question???')
 sleep 0.5
 DarkView.new.correct
