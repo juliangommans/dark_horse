@@ -18,9 +18,12 @@ class DarkModel #getting the questions from dark_questions_samples.txt
     file_parsing
   end
 
-  def score(player)
+  def update_score(player)
     @players[player].score += 1
-    return @players[player].score
+  end
+
+  def score(player)
+    @players[player].score
   end
 
   def player_name(player)
@@ -58,4 +61,3 @@ class Player
 
 end
 ######################################
-# DRIVER CODE
