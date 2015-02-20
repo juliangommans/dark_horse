@@ -37,7 +37,11 @@ class DarkController
       sleep(1)
       @view.score(@model.player_name(0),@model.player_name(1),@model.score(0),@model.score(1))
     end
-    if @model.score(0) > @model.score(1)
+    victory
+  end
+
+  def victory
+      if @model.score(0) > @model.score(1)
       @view.winner(@model.player_name(0), @model.player_name(1))
     elsif @model.score(0) < @model.score(1)
       @view.winner(@model.player_name(1), @model.player_name(0))
