@@ -12,12 +12,23 @@ end
 #######################################
 class DarkModel #getting the questions from dark_questions_samples.txt
 
-attr_accessor :player_1, :player_2
-
   def initialize
+    @players = []
+    2.times { @players << Player.new }
     file_parsing
-    @player_1 = ""
-    @player_2 = ""
+  end
+
+  def score(player)
+    @players[player].score += 1
+    return @players[player].score
+  end
+
+  def player_name(player)
+    @players[player].name
+  end
+
+  def set_player_name(player,name)
+    @players[player].name = name
   end
 
   def file_parsing
@@ -34,8 +45,15 @@ attr_accessor :player_1, :player_2
     @flashcards.shift
   end
 
-  def scoring_system
+end
+######################################
+class Player
 
+  attr_accessor :name, :score
+
+  def initialize
+    @name = ""
+    @score = 0
   end
 
 end
