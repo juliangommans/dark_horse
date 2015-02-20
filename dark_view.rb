@@ -57,10 +57,6 @@ class DarkView
 
   def intro
 
-end
-
-
-
 #-------HERE IS A NICE LITTLE START UP DEMO ----------#
 print "\e[H\e[2J"
 print "\e[H"
@@ -73,15 +69,98 @@ puts" | "
 sleep 0.2
 print "\e[H"
 puts" /"
-puts"/ ""
+puts"/ "
 sleep 0.2
 print "\e[H"
 puts"- -"
 sleep 0.2
 print "\e[H"
-puts"........"
+puts'\ '
+puts' \ '
+sleep 0.2
+uts" | "
+puts" | "
 sleep 0.2
 print "\e[H"
-puts"..........."
+puts" /"
+puts"/ "
 sleep 0.2
-print "\e[H\e[2J"
+print "\e[H"
+puts"- -"
+sleep 0.2
+print "\e[H"
+puts'\ '
+puts' \ '
+sleep 0.2
+uts" | "
+puts" | "
+sleep 0.2
+print "\e[H"
+puts" /"
+puts"/ "
+sleep 0.2
+print "\e[H"
+puts"- -"
+sleep 0.2
+print "\e[H"
+puts'\ '
+puts' \ '
+sleep 0.2
+uts" | "
+puts" | "
+sleep 0.2
+print "\e[H"
+puts" /"
+puts"/ "
+sleep 0.2
+print "\e[H"
+puts"- -"
+sleep 0.2
+print "\e[H"
+puts'\ '
+puts' \ '
+sleep 0.2
+uts" | "
+puts" | "
+sleep 0.2
+print "\e[H"
+puts" /"
+puts"/ "
+sleep 0.2
+print "\e[H"
+puts"- -"
+sleep 0.2
+print "\e[H"
+puts'\ '
+puts' \ '
+sleep 0.2
+uts" | "
+puts" | "
+sleep 0.2
+print "\e[H"
+puts" /"
+puts"/ "
+sleep 0.2
+print "\e[H"
+puts"- -"
+sleep 0.2
+print "\e[H"
+puts'\ '
+puts' \ '
+sleep 0.2
+uts" | "
+puts" | "
+sleep 0.2
+print "\e[H"
+puts" /"
+puts"/ "
+sleep 0.2
+print "\e[H"
+puts"- -"
+sleep 0.2
+print "\e[H"
+puts'\ '
+puts' \ '
+sleep 0.2
+end
+end
