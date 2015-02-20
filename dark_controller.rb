@@ -24,17 +24,25 @@ class DarkController
   end
 
   def play
+    @view.intro
     player_names
     @view.score(@model.player_name(0),@model.player_name(1),0,0)
     5.times do
       @scores = []
       2.times do |player|
         draw = @model.current_card
-        @view.question(draw.question)
+        @view.question(draw.question,@model.player_name(player))
         @model.update_score(player) if answer_checker(draw)
       end
-      sleep()
+      sleep(1)
       @view.score(@model.player_name(0),@model.player_name(1),@model.score(0),@model.score(1))
+    end
+    if @model.score(0) > @model.score(1)
+      @view.winner(@model.player_name(0), @model.player_name(1))
+    elsif @model.score(0) < @model.score(1)
+      @view.winner(@model.player_name(1), @model.player_name(0))
+    else
+      @view.draw(@model.player_name(0), @model.player_name(1))
     end
   end
 
