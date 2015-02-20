@@ -24,30 +24,33 @@ class DarkController
   end
 
   def play
-
-    #deck.length.times do
-      #draw card
-      #player 1 question
-      #check answer and update results
-      #player 2 question
-      #check answer and update results
-      #update the score.
-    #end
-
-    current_card = @model.current_card
-    @view.question(current_card.question)
-    @view.incorrect(current_card.answer)
-
-
+    5.times do
+      2.times do |player|
+        draw = @model.current_card
+        @view.question(draw.question)
+        @model.score(player) if answer_checker(draw)
+      end
+      @view.update_board(@model.player_name(0),@model.player_name(1),@model.score(0), @model.score(1))
+    end
   end
 
+  def answer_checker(draw)
+       if draw.answer == gets.chomp
+        @view.correct
+        return true
+      else
+        @view.incorrect(draw.answer)
+        return false
+      end
+  end
 
   def player_names
-    @view.start_1
-      @model.player_1 = gets.chomp
-    @view.start_2
-      @model.player_2 = gets.chomp
+    2.times do |player|
+      @view.start(player)
+      @model.set_player_name(player, gets.chomp)
+    end
   end
+
 end
 
 DarkHorseGame.new
