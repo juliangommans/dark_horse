@@ -18,11 +18,11 @@ class DarkView
     track1=[" "," "," "," "," "]
     track2=[" "," "," "," "," "]
       if s1!=0
-        track1.insert(s1-1, 'X')
+        track1.insert(s1, 'X')
       end
 
-      if s1!=0
-        track2.insert(s2-1,'X')
+      if s2!=0
+        track2.insert(s2,'X')
       end
       print "\e[H\e[2J"
       print "\e[H"
@@ -58,20 +58,24 @@ class DarkView
   end
  end
 
+
+
 #-------HERE IS A NICE LITTLE START UP DEMO ----------#
 print "\e[H\e[2J"
 print "\e[H"
-puts "commencing screen test for curser, please wait"
+puts "Loading 'Dark Horse, Please wait.."
 sleep 1.2
 print "\e[H\e[2J"
 print "\e[H"
-puts".."
+puts" | "
+puts" | "
 sleep 0.2
 print "\e[H"
-puts"...."
+puts" /"
+puts"/ ""
 sleep 0.2
 print "\e[H"
-puts"......"
+puts"- -"
 sleep 0.2
 print "\e[H"
 puts"........"
