@@ -7,10 +7,8 @@ class DarkView
   def initialize
   end
 
-  def start
-    2.times do |player|
+  def start(player)
       puts "Welcome Player #{player+1}, please enter your name"
-    end
   end
 
   def score(p1,p2,s1,s2)
